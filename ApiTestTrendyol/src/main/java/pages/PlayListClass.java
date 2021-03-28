@@ -52,15 +52,16 @@ public class PlayListClass extends RequestSpec {
     }
 
         public void addPlayListTracks(String playListId, List<Object> tracks){
-                    given()
+                  for(Object track: tracks)
+                  {given()
                             .spec(super.getRequestSpecification())
-                            .queryParam("uris",tracks)
+                            .queryParam("uris",track)
                             .when()
                             .post("/playlists/{playlist_id}/tracks",playListId)
                             .then()
                             .statusCode(201)
                             .extract().response();
-    }
+    }}
         public void updatePlayLists(String playListId,String key,String value) throws IOException {
 
         URL file = Resources.getResource("updatePlaylist.json");//jsonı okunabilir hale getiriyor
