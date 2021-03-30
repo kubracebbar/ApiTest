@@ -18,6 +18,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 
 public class PlayListClass extends RequestSpec {
+
     public String createPlayList(String userId,String key,String value) throws IOException {
 
         URL file = Resources.getResource("playlist.json");//jsonı okunabilir hale getiriyor
@@ -53,7 +54,8 @@ public class PlayListClass extends RequestSpec {
 
         public void addPlayListTracks(String playListId, List<Object> tracks){
                   for(Object track: tracks)
-                  {given()
+                  {
+                      given()
                             .spec(super.getRequestSpecification())
                             .queryParam("uris",track)
                             .when()

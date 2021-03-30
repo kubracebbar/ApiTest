@@ -22,7 +22,7 @@ public class UserClass extends RequestSpec {
                         .extract().response();
         assertThat("Status code kontrolu 200 olmali", response.getStatusCode(), equalTo(200));
         assertThat("id kontrolu ", response.getBody().jsonPath().getString("id"), not((equalTo(null))));
-       return response.getBody().jsonPath().getString("id");
+        return response.getBody().jsonPath().getString("id");
     }
     public void getUserProfile(String userId){
 

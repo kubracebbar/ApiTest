@@ -28,7 +28,9 @@ public class TestClassOne {
      playList.updatePlayLists(playListId,"name","deneme");// ek case
      playList.deletePlayLists(playListId,tracks.get(2));
      playList.validatePlayListDeletion(playListId);
-
+     String artistId= search.searchArtist();
+     ArtistClass artist= new ArtistClass();
+     artist.getArtist(artistId);
 
 
 

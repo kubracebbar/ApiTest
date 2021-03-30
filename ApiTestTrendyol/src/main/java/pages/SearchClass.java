@@ -37,7 +37,7 @@ Response response=
        return a;
 
     }
-    public List<Object> searchArtist(){
+    public String searchArtist(){
 
         Response response=
                 given()
@@ -49,8 +49,8 @@ Response response=
                         .get("/search")
                         .then()
                         .extract().response();
-        List<Object> a  =((RestAssuredResponseImpl) response).response().path("artists.items.id");
-        return a;
+        String b  =((RestAssuredResponseImpl) response).response().path("artists.items.id");
+        return b;
     }
 
 
